@@ -8,11 +8,11 @@ st.title('PDF 翻译')
 ss = st.session_state
 
 with st.form(f'请输入参数'):
-    ss.APP_KEY = st.text_input("APP_KEY 应用ID")
-    ss.APP_SECRET = st.text_input("APP_SECRET 应用密钥")
+    ss.APP_KEY = st.text_input("应用ID APP_KEY")
+    ss.APP_SECRET = st.text_input("应用密钥 APP_SECRET")
     ss.pdf_path = st.text_input("所翻译的文件夹路径", value = "C:/fanyi_source_folder")
     ss.trans_tpye = st.selectbox("翻译类型",  ['中译韩', '韩译中', '中译英', '英译中','英译韩','韩译英'], index=0)
-    submitted = st.form_submit_button('开始翻译')
+    submitted = st.form_submit_button('翻译')
     if ss.trans_tpye == "中译韩" :
         ss.lang_from = 'zh-CHS'
         ss.lang_to = 'ko'
